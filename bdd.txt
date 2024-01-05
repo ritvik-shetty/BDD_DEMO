@@ -34,3 +34,5 @@ Then display the proper validation message
 . Limitations of BDD:
 1) Testers must have prior experience in TDD(Test Driven Development).
 2) Requirements must be correctly analyzed.
+
+. Tags in cucmber are used if we have many scenarios in the feature file and we need to keep them in one group.(@ symbol is used)
