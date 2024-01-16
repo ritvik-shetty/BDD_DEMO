@@ -1,7 +1,7 @@
 Feature: Testing employee PUT request using REST API
 
   Scenario: Verify PUT request to update an employee
-    Given the API endpoint is "http://127.0.0.1:5000/update_employee/9"
+    Given the API endpoint is "http://127.0.0.1:5000/update_employee/10"
     When PUT request is made with the following JSON data:
       """
       {
@@ -27,7 +27,7 @@ Feature: Testing employee PUT request using REST API
     Then the response status code for unsuccessfull should be 404  
 
 
-  Scenario: Verify PUT request to update an employee
+  Scenario: Verify PUT request to update an employee with missing field information
     Given the API endpoint is "http://127.0.0.1:5000/update_employee/9"
     When PUT request is made with the following JSON data:
       """
