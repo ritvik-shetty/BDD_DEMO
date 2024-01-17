@@ -4,20 +4,23 @@ from behave import given, when, then
 
 api_endpoint = "http://127.0.0.1:5000/update_employee"
 
+#given the api url for the PUT request
 @given('the API endpoint is "{endpoint}"')
 def set_api_endpoint(context, endpoint):
     context.api_endpoint = endpoint
 
+#when the PUT request for the api is made
 @when('PUT request is made with the following JSON data')
 def make_put_request_with_json(context):
     data = json.loads(context.text)
     context.response = requests.put(f"{context.api_endpoint}", json=data)
 
+# Code to check unsuccessful status code
 @then('the response status code for unsuccessfull should be {status_code:d}')
 def check_response_status(context, status_code):
     assert context.response.status_code == status_code, f"Expected status code {status_code}, but got {context.response.status_code}"
 
-
+# Code to check successful status code
 @then('the response status code for successfull should be {status_code:d}')
 def check_response_status(context, status_code):
     assert context.response.status_code == status_code, f"Expected status code {status_code}, but got {context.response.status_code}"

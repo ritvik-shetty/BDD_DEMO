@@ -1,7 +1,7 @@
 import requests
 from behave import given, when, then
 
-#given the api url for the get request
+#given the api url for the GET request
 @given('the API endpoint is "{url}"')
 def set_api_url(context, url):
     context.api_url = url
